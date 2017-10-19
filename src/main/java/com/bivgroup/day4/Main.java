@@ -1,22 +1,30 @@
 package com.bivgroup.day4;
 
 
+import com.bivgroup.A;
+
 public class Main {
     public static void main(String[] args) throws ClassNotFoundException, IllegalAccessException, InstantiationException {
-        A tmpA = new A();
-        tmpA.bivMethodPrint("Hello");
 
-        ClassLoader loader1 = new CustomClassLoader();
-        ClassLoader loader2 = new CustomClassLoader();
+        CustomClassLoader loader1 = new CustomClassLoader();
+        CustomClassLoader loader2 = new CustomClassLoader();
 
-        Class clazz1= Class.forName("com.bivgroup.day4.A",true,loader1);
-        Object object1= clazz1.newInstance();
+        Class<?> clazz1= Class.forName("com.bivgroup.A",true,loader1);
 
-        Class clazz2= Class.forName("com.bivgroup.day4.A",true,loader2);
-        Object object2= clazz2.newInstance();
+        //        A object1= (A) clazz1.newInstance();
 
-        System.out.println("Первый объект - " + object1.getClass().getClassLoader());
-        System.out.println("Второй объект - " + object2.getClass().getClassLoader());
+        Class<?> clazz2= Class.forName("com.bivgroup.A",true,loader2);
 
+        //        A object2= (A) clazz2.newInstance();
+
+        System.out.println("Первый объект - " + clazz1.getClassLoader());
+        System.out.println("Второй объект - " + clazz2.getClassLoader());
+
+        if (clazz1.equals(clazz2))
+        {
+            System.out.println("Это одни и те же классы");
+        }
+        else
+            System.out.println("Классы разные - я проверил :)");
     }
 }

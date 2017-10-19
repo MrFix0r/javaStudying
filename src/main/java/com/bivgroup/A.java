@@ -1,4 +1,6 @@
-package com.bivgroup.day4;
+package com.bivgroup;
+
+import com.bivgroup.day4.bivInterface;
 
 public class A implements bivInterface {
 
