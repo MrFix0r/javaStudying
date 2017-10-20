@@ -1,19 +1,17 @@
 package com.bivgroup.day4;
 
 
-import com.bivgroup.A;
-
 public class Main {
     public static void main(String[] args) throws ClassNotFoundException, IllegalAccessException, InstantiationException {
 
         CustomClassLoader loader1 = new CustomClassLoader();
         CustomClassLoader loader2 = new CustomClassLoader();
 
-        Class<?> clazz1= Class.forName("com.bivgroup.A",true,loader1);
+        Class<?> clazz1= Class.forName("com.bivgroup.day4.A",true,loader1);
 
         //        A object1= (A) clazz1.newInstance();
 
-        Class<?> clazz2= Class.forName("com.bivgroup.A",true,loader2);
+        Class<?> clazz2= Class.forName("com.bivgroup.day4.A",true,loader2);
 
         //        A object2= (A) clazz2.newInstance();
 

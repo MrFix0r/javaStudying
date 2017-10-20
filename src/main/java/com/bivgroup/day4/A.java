@@ -1,4 +1,4 @@
-package com.bivgroup;
+package com.bivgroup.day4;
 
 import com.bivgroup.day4.bivInterface;
 
